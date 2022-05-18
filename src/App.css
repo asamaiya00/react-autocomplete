@@ -3,11 +3,10 @@
 }
 
 .App-header {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 10%;
 }
 
 input {
@@ -15,4 +14,41 @@ input {
   padding: 1%;
   width: 50%;
   border-radius: 4rem;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  background-color: #fbfbfb;
+  width: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+  text-align: left;
+}
+
+.suggestion:hover {
+  background-color: #c0c0c0;
+}
+
+img {
+  padding: 0 1rem;
+}
+
+.text {
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  input,
+  .suggestion {
+    width: 75%;
+    font-size: small;
+  }
+}
+
+.suggestion:first-of-type {
+  border-radius: 1rem 1rem 0 0;
+}
+.suggestion:last-of-type {
+  border-radius: 0 0 1rem 1rem;
 }
