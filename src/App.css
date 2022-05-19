@@ -58,6 +58,9 @@ img {
     width: 75%;
     font-size: small;
   }
+  span {
+    right: 15%;
+  }
 }
 
 .suggestion:first-of-type {
