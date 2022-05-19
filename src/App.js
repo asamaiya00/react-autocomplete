@@ -28,22 +28,33 @@ function App() {
     }
     setQuery(e.target.value);
   };
+
+  const reset = () => {
+    setQuery('');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <input
-          placeholder="Search location..."
-          type="text"
-          value={query}
-          onChange={handleQueryChange}
-          onFocus={() => setSuggestions(regions)}
-          onBlur={() => setTimeout(setSuggestions([]), 100)}
-        />
+        <div className="input-container">
+          <input
+            placeholder="Search location"
+            type="text"
+            onChange={handleQueryChange}
+            value={query}
+            onFocus={() => setSuggestions(regions)}
+            onBlur={() => setTimeout(() => setSuggestions([]), 200)}
+          ></input>
+          {query && <span onClick={reset}>❌</span>}
+        </div>
         {suggestions &&
           suggestions.map((suggestion) => (
             <Suggestion
               key={suggestion.name}
-              onClick={() => setQuery(suggestion.name)}
+              onClick={() => {
+                setQuery(suggestion.name);
+                setSuggestions([]);
+              }}
               suggestion={suggestion}
             />
           ))}

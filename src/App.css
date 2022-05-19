@@ -9,11 +9,25 @@
   margin-top: 10%;
 }
 
+.input-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 input {
   font-size: larger;
   padding: 1%;
   width: 50%;
   border-radius: 4rem;
+}
+span {
+  position: absolute;
+  right: 25%;
+  cursor: pointer;
 }
 
 .suggestion {
